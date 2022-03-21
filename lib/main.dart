@@ -32,10 +32,17 @@ class MyApp extends StatelessWidget {
               child: GridTile(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, e["path"] as String);
+                    // Navigator.pushNamed(context, e["path"] as String);
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: ((context) {
+                        return Arm();
+                        }
+                      )
+                      )
+                    );
                   },
                   child: Image(
-                    image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')
+                    image: NetworkImage(e["image"] as String)
                   ),
                 ),
               ),
@@ -56,6 +63,18 @@ class MyApp extends StatelessWidget {
           // }),
         ),
       ),
+    );
+  }
+}
+
+
+class Arm extends StatelessWidget {
+  const Arm({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      
     );
   }
 }
