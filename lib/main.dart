@@ -32,11 +32,11 @@ class MyApp extends StatelessWidget {
               child: GridTile(
                 child: GestureDetector(
                   onTap: () {
-                    // Navigator.pushNamed(context, e["path"] as String);
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: ((context) {
-                        return Arm();
-                        }
+                    Navigator.push(context, 
+                      MaterialPageRoute(
+                        builder: ((context) {
+                          return Arm();
+                          }
                       )
                       )
                     );
@@ -74,7 +74,9 @@ class Arm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+          title: Text("test tittle2"),
+    )
     );
   }
 }
