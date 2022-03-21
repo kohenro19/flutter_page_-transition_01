@@ -7,9 +7,11 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
   // final parts = ['chest', 'arm', 'leg'];
-    final parts = [{"name": "chest", "path": "/chest"},
-                   {"name": "arm", "path": "/arm"},
-                   {"name": "leg", "path": "/leg"},];
+    final parts = [{"name": "chest", "path": "/chest", "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
+                  //  {"name": "arm", "path": "/arm"},
+                  //  {"name": "leg", "path": "/leg"},
+                  
+                  ];
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +27,18 @@ class MyApp extends StatelessWidget {
         body: GridView.count(
           crossAxisCount: 2,
           children: parts.map((e) {
-            return Center(
-              child: TextButton(
-                child: Text(
-                e["name"] as String
+            return ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: GridTile(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, e["path"] as String);
+                  },
+                  child: Image(
+                    image: NetworkImage('https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg')
+                  ),
+                ),
               ),
-                onPressed: () {
-                  Navigator.pushNamed(context, e["path"] as String);
-                },
-              )
             );
           }).toList(),
           // children: List.generate(10, (index) {
@@ -54,4 +59,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
