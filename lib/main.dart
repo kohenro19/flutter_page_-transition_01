@@ -34,11 +34,10 @@ class MyApp extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, 
                       MaterialPageRoute(
-                        builder: ((context) {
-                          return Arm();
-                          }
+                        builder: (context) => Arm(),
                       )
-                      )
+
+
                     );
                   },
                   child: Image(
