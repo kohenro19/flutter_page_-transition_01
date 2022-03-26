@@ -6,7 +6,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  // final parts = ['chest', 'arm', 'leg'];
     final parts = [{"name": "chest", "path": "/chest", "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
                   //  {"name": "arm", "path": "/arm"},
                   //  {"name": "leg", "path": "/leg"},
@@ -20,10 +19,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("test tittle")
-        ),
+      home: Home()
+    );
+  }
+}       
+        
+class Home extends StatelessWidget {
+  const Home({ Key? key }) : super(key: key);
+  myapp = new MyApp();
+  parts = myapp.parts
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         body: GridView.count(
           crossAxisCount: 2,
           children: parts.map((e) {
@@ -36,8 +43,6 @@ class MyApp extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => Arm(),
                       )
-
-
                     );
                   },
                   child: Image(
@@ -47,25 +52,10 @@ class MyApp extends StatelessWidget {
               ),
             );
           }).toList(),
-          // children: List.generate(10, (index) {
-          //   return Center(
-          //     child: TextButton(
-          //       child: Text(
-          //         'Item $index',
-          //         style: Theme.of(context).textTheme.headline5,            
-          //       ),
-          //       onPressed: () {
-          //         Navigator.pushNamed(context, '/next');
-          //       },
-          //     )
-          //   );
-          // }),
         ),
-      ),
     );
   }
 }
-
 
 class Arm extends StatelessWidget {
   const Arm({ Key? key }) : super(key: key);
