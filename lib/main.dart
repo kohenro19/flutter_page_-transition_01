@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'arm.dart';
+import 'chest.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,7 +27,7 @@ class Home extends StatelessWidget {
 
   final parts = [
                   {"name": "chest", "path": Arm(), "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
-                  // {"name": "arm", "path": Chest(), "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'},
+                  {"name": "arm", "path": Chest(), "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'},
                   // {"name": "leg", "path": "/leg", "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
                 ];
 
@@ -34,7 +35,6 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("test tittle")
         ),
         body: GridView.count(
           crossAxisCount: 2,
