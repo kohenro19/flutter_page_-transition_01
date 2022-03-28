@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'arm.dart';
 
 void main() {
   runApp(MyApp());
@@ -6,14 +7,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
-  // final parts = ['chest', 'arm', 'leg'];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'test',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
       home: Home(),
     );
@@ -21,30 +21,14 @@ class MyApp extends StatelessWidget {
 }
 
 
-class Arm extends StatelessWidget {
-  const Arm({ Key? key }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-
-
-      appBar: AppBar(
-          title: Text("test tittle2"),
-    )
-
-    );
-  }
-}
-
 class Home extends StatelessWidget {
   Home({ Key? key }) : super(key: key);
 
-  final parts = [{"name": "chest", "path": "/chest", "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
-                  //  {"name": "arm", "path": "/arm"},
-                  //  {"name": "leg", "path": "/leg"},
-                  
-                  ];
+  final parts = [
+                  {"name": "chest", "path": Arm(), "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
+                  // {"name": "arm", "path": Chest(), "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'},
+                  // {"name": "leg", "path": "/leg", "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
+                ];
 
   @override
   Widget build(BuildContext context) {
@@ -62,10 +46,8 @@ class Home extends StatelessWidget {
                   onTap: () {
                     Navigator.push(context, 
                       MaterialPageRoute(
-                        builder: (context) => Arm(),
+                        builder: (context) => e["path"] as Widget
                       )
-
-
                     );
                   },
                   child: Image(
@@ -75,19 +57,6 @@ class Home extends StatelessWidget {
               ),
             );
           }).toList(),
-          // children: List.generate(10, (index) {
-          //   return Center(
-          //     child: TextButton(
-          //       child: Text(
-          //         'Item $index',
-          //         style: Theme.of(context).textTheme.headline5,            
-          //       ),
-          //       onPressed: () {
-          //         Navigator.pushNamed(context, '/next');
-          //       },
-          //     )
-          //   );
-          // }),
         ),
       );
   }
