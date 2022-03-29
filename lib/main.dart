@@ -26,7 +26,7 @@ class Home extends StatelessWidget {
   Home({ Key? key }) : super(key: key);
 
   final parts = [
-                  {"name": "chest", "path": Arm(), "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
+                  {"name": "chest", "path": Arm(), "image": 'https://generationiron.com/wp-content/uploads/2021/10/B33BCAF6-AB23-40CC-9EF7-008A6124A6CD.jpeg'},
                   {"name": "arm", "path": Chest(), "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'},
                   // {"name": "leg", "path": "/leg", "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
                 ];

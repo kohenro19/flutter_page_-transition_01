@@ -9,7 +9,19 @@ class Chest extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           title: Text("Chest Workout"),
-      )
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              // 
+            ]
+          )
+        ),
+        child: Column(),
+      ),
+    
+
     );
   }
 }
