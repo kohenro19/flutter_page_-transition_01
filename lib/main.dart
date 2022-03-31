@@ -27,7 +27,7 @@ class Home extends StatelessWidget {
 
   final parts = [
                   {"name": "chest", "path": Arm(), "image": 'https://generationiron.com/wp-content/uploads/2021/10/B33BCAF6-AB23-40CC-9EF7-008A6124A6CD.jpeg'},
-                  {"name": "arm", "path": Chest(), "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'},
+                  {"name": "arm", "path": Chest(), "image": 'https://onnitacademy.imgix.net/wp-content/uploads/2020/06/sizzlchestBIG-1333x1000.jpg'},
                   // {"name": "leg", "path": "/leg", "image": 'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg'},
                 ];
 

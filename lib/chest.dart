@@ -19,7 +19,7 @@ class Chest extends StatelessWidget {
         //   )
         // ),
         child: Container(
-          height: 135,
+          height: 105,
           width: 500,
           color: Colors.redAccent,
           child: Column(
@@ -27,17 +27,15 @@ class Chest extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    height: 80,
+                    color: Colors.cyan,
+                    height: 50,
                     width: 80,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                        image: AssetImage(
-                          'assets/arm.jpg'
-                        )
-                      )
-                    ),
-                  )
+                  ),
+                   Container(
+                    color: Colors.deepPurple,
+                    height: 50,
+                    width: 200,
+                  )                 
                 ],
               )
             ],
