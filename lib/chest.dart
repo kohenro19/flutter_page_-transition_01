@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 
 class Chest extends StatelessWidget {
-  const Chest({ Key? key }) : super(key: key);
+  List<Color> colorList = [Colors.cyan, Colors.deepOrange, Colors.indigo];
+  Chest({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -10,42 +11,24 @@ class Chest extends StatelessWidget {
       appBar: AppBar(
           title: Text("Chest Workout"),
       ),
-      body: Container(
-        // decoration: BoxDecoration(
-        //   gradient: LinearGradient(
-        //     colors: [
-        //       // 
-        //     ]
-        //   )
-        // ),
-        child: Container(
-          height: 105,
-          width: 500,
-          color: Colors.redAccent,
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Container(
-                    color: Colors.cyan,
+      body:ListView.builder(
+        itemCount: 12,
+        itemBuilder:  (BuildContext context, int index) {
+          return Container(
+            height: 80,
+            color: colorList[index % colorList.length],
+            child: Row(
+              children: [
+                Container(
+                    color: Colors.black,
                     height: 50,
-                    width: 80,
-                  ),
-                   Container(
-                    color: Colors.deepPurple,
-                    height: 50,
-                    width: 200,
-                  )                 
-                ],
-              )
-            ],
-
-          ),
-          
-        ),
-      ),
-    
-
+                    width: 80,                  
+                )
+              ],
+            ),
+          );
+        },
+      )    
     );
   }
 }
